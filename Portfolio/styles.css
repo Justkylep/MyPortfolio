@@ -1,0 +1,84 @@
+header {
+  display: flex; /* Use Flexbox to align items in a row */
+  justify-content: space-between; /* Push logo to left, nav to right */
+  align-items: center; /* Vertically center items in the header */
+  padding: 15px 15px; /* Add space inside the header (top/bottom & left/right) */
+  background-color: white; /* Set the background color of the header to white */
+}
+nav ul {
+  display: flex;          /* Align items in a row */
+  justify-content: center;/* Align center, or use: space-between, flex-end, etc. */
+  gap: 20px;              /* Space between buttons/links */
+   list-style: none;
+}
+nav ul li a {
+  text-decoration: none;   /* removes underline */
+  font-size: 22px;         /* change text size */
+  color: black;         /* change text color */
+}
+section {
+  text-align: center;
+}
+nav ul a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+nav ul a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0;
+  background-color: #007BFF;
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+nav ul a:hover {
+  color: #007BFF;
+}
+
+nav ul a:hover::after {
+  width: 100%;
+}
+
+
+
+
+  #home h1, #home h2, #home p {
+    opacity: 0;
+    transform: translateY(30px);
+    animation-fill-mode: forwards; /* Keep the final state */
+    animation-timing-function: ease-out;
+  }
+
+  #home h1 {
+    animation-name: fadeSlideUp;
+    animation-duration: 0.8s;
+    animation-delay: 0s;
+  }
+
+  #home h2 {
+    animation-name: fadeSlideUp;
+    animation-duration: 0.8s;
+    animation-delay: 0.5s;  /* Starts after h1 */
+  }
+
+  #home p {
+    animation-name: fadeSlideUp;
+    animation-duration: 0.8s;
+    animation-delay: 1s;   /* Starts last */
+  }
+
+  @keyframes fadeSlideUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
